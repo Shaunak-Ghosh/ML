@@ -79,3 +79,12 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 model.summary()
+
+history = model.fit(training_images,
+                    training_labels,
+                    batch_size=100,
+                    epochs=10,
+                    validation_data = (validation_images, validation_labels)
+                    )
+
+plot_accuracy_and_loss(history)
