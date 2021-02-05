@@ -66,3 +66,16 @@ print(training_images[0])
 
 training_images = training_images / 255.0
 validation_images = validation_images / 255.0
+
+model = tf.keras.Sequential([
+                                    tf.keras.layers.Flatten(input_shape=(28,28)),
+                                    tf.keras.layers.Dense(500, activation='relu'),
+                                    tf.keras.layers.Dense(300, activation='relu'),
+                                    tf.keras.layers.Dense(10, activation= 'softmax')
+                                    ])
+
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(),
+              metrics=['accuracy'])
+
+model.summary()
