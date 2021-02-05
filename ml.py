@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from colorama import Fore
 
 def plot_accuracy_and_loss(history):
   acc = history.history['accuracy']
@@ -83,8 +84,10 @@ model.summary()
 history = model.fit(training_images,
                     training_labels,
                     batch_size=100,
-                    epochs=10,
+                    epochs=100,
                     validation_data = (validation_images, validation_labels)
                     )
 
 plot_accuracy_and_loss(history)
+
+print(Fore.RED + "The number is five")
