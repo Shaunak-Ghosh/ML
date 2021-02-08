@@ -1,11 +1,24 @@
+# @@ -1,11 +1,23 @@
 # Stable
-
-
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import os
 from colorama import Fore
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'ML'
+  
+@app.route('/html')
+def cakes():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
 
 def plot_accuracy_and_loss(history):
   acc = history.history['accuracy']
