@@ -1,0 +1,24 @@
+# !/bin/bash
+
+git status
+
+git add --all
+
+git commit -am "add all and push to repo"
+
+run *
+
+if exit 0 ; then
+    echo $USER "Exit status 0"
+elif exit 1 ; then
+    echo $USER "Exit status 1"
+else
+    echo $USER "Build failed"
+    Exit 2
+
+fi
+exit 0
+exit 1 *
+exit 2 *
+
+close *
